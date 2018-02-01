@@ -71,12 +71,12 @@ public enum Face {
 //	** Figure 1 **
 
 public enum Tile {
-	case F01, F02, F03, F06, F09, F08, F07, F04, F05
-	case U18, U19, U20, U12, U03, U02, U01, U10, U11
-	case R03, R12, R20, R23, R26, R17, R09, R06, R14
-	case B24, B25, B26, B23, B20, B19, B18, B21, B22
-	case L18, L10, L01, L04, L07, L15, L24, L21, L13
-	case D07, D08, D09, D17, D26, D25, D24, D15, D16
+	case F01, F02, F03, F06, F09, F08, F07, F04, F05	// front
+	case U18, U19, U20, U12, U03, U02, U01, U10, U11	// up
+	case R03, R12, R20, R23, R26, R17, R09, R06, R14	// right
+	case B24, B25, B26, B23, B20, B19, B18, B21, B22	// back
+	case D07, D08, D09, D17, D26, D25, D24, D15, D16	// down
+	case L18, L10, L01, L04, L07, L15, L24, L21, L13	// left
 }
 
 //	Turn:
@@ -101,12 +101,12 @@ public enum Turn {
 //	It has an associated value with it.
 
 public enum Movement {
-	case front(turn: Turn)
-	case back(turn: Turn)
-	case up(turn: Turn)
-	case down(turn: Turn)
-	case left(turn: Turn)
-	case right(turn: Turn)
+	case front(Turn)
+	case back(Turn)
+	case up(Turn)
+	case down(Turn)
+	case left(Turn)
+	case right(Turn)
 }
 
 //	Surface:
@@ -124,9 +124,9 @@ public enum Movement {
 //		** Figure 2 **
 
 public struct Surface: CustomStringConvertible, Equatable {
-	let (a, b, c): (Tile, Tile, Tile)
-	let (d, e, f): (Tile, Tile, Tile)
-	let (g, h, i): (Tile, Tile, Tile)
+	public let (a, b, c): (Tile, Tile, Tile)
+	public let (d, e, f): (Tile, Tile, Tile)
+	public let (g, h, i): (Tile, Tile, Tile)
 
 	init(_ a: Tile, _ b: Tile, _ c: Tile, _ d: Tile, _ e: Tile, _ f: Tile, _ g: Tile, _ h: Tile, _ i: Tile) {
 		(self.a, self.b, self.c) = (a, b, c)
@@ -193,13 +193,13 @@ public struct Surface: CustomStringConvertible, Equatable {
 //	`Cube` represnet a complete tiles of all faces
 //
 
-open class Cube: CustomStringConvertible, Equatable {
-	let front: Surface
-	let back: Surface
-	let up: Surface
-	let down: Surface
-	let left: Surface
-	let right: Surface
+public struct Cube: CustomStringConvertible, Equatable {
+	public let front: Surface
+	public let back: Surface
+	public let up: Surface
+	public let down: Surface
+	public let left: Surface
+	public let right: Surface
 
 
 	public init(front: Surface, back: Surface, up: Surface, down: Surface, left: Surface, right: Surface) {

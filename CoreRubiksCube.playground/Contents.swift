@@ -21,31 +21,31 @@ assert(cube.makeDown(.double).makeDown(.double) == cube)
 assert(cube.makeLeft(.double).makeLeft(.double) == cube)
 assert(cube.makeRight(.double).makeRight(.double) == cube)
 
-assert(cube.makeMove(Movement.front(turn: .clockwise)).makeMove(Movement.front(turn: .counterclockwise)) == cube)
-assert(cube.makeMove(Movement.back(turn: .clockwise)).makeMove(Movement.back(turn: .counterclockwise)) == cube)
-assert(cube.makeMove(Movement.up(turn: .clockwise)).makeMove(Movement.up(turn: .counterclockwise)) == cube)
-assert(cube.makeMove(Movement.down(turn: .clockwise)).makeMove(Movement.down(turn: .counterclockwise)) == cube)
-assert(cube.makeMove(Movement.left(turn: .clockwise)).makeMove(Movement.left(turn: .counterclockwise)) == cube)
-assert(cube.makeMove(Movement.right(turn: .clockwise)).makeMove(Movement.right(turn: .counterclockwise)) == cube)
+assert(cube.makeMove(Movement.front(.clockwise)).makeMove(Movement.front(.counterclockwise)) == cube)
+assert(cube.makeMove(Movement.back(.clockwise)).makeMove(Movement.back(.counterclockwise)) == cube)
+assert(cube.makeMove(Movement.up(.clockwise)).makeMove(Movement.up(.counterclockwise)) == cube)
+assert(cube.makeMove(Movement.down(.clockwise)).makeMove(Movement.down(.counterclockwise)) == cube)
+assert(cube.makeMove(Movement.left(.clockwise)).makeMove(Movement.left(.counterclockwise)) == cube)
+assert(cube.makeMove(Movement.right(.clockwise)).makeMove(Movement.right(.counterclockwise)) == cube)
 
-assert(cube.makeMove(Movement.front(turn: .double)).makeMove(Movement.front(turn: .double)) == cube)
-assert(cube.makeMove(Movement.back(turn: .double)).makeMove(Movement.back(turn: .double)) == cube)
-assert(cube.makeMove(Movement.up(turn: .double)).makeMove(Movement.up(turn: .double)) == cube)
-assert(cube.makeMove(Movement.down(turn: .double)).makeMove(Movement.down(turn: .double)) == cube)
-assert(cube.makeMove(Movement.left(turn: .double)).makeMove(Movement.left(turn: .double)) == cube)
-assert(cube.makeMove(Movement.right(turn: .double)).makeMove(Movement.right(turn: .double)) == cube)
+assert(cube.makeMove(Movement.front(.double)).makeMove(Movement.front(.double)) == cube)
+assert(cube.makeMove(Movement.back(.double)).makeMove(Movement.back(.double)) == cube)
+assert(cube.makeMove(Movement.up(.double)).makeMove(Movement.up(.double)) == cube)
+assert(cube.makeMove(Movement.down(.double)).makeMove(Movement.down(.double)) == cube)
+assert(cube.makeMove(Movement.left(.double)).makeMove(Movement.left(.double)) == cube)
+assert(cube.makeMove(Movement.right(.double)).makeMove(Movement.right(.double)) == cube)
 
 
 let moves: [Movement] = [
-	.front(turn: .clockwise), .back(turn: .clockwise),
-	.up(turn: .clockwise), .down(turn: .clockwise),
-	.left(turn: .clockwise), .right(turn: .clockwise),
-	.front(turn: .counterclockwise), .back(turn: .counterclockwise),
-	.up(turn: .counterclockwise), .down(turn: .counterclockwise),
-	.left(turn: .counterclockwise), .right(turn: .counterclockwise),
-	.front(turn: .double), .back(turn: .double),
-	.up(turn: .double), .down(turn: .double),
-	.left(turn: .double), .right(turn: .double)
+	.front(.clockwise), .back(.clockwise),
+	.up(.clockwise), .down(.clockwise),
+	.left(.clockwise), .right(.clockwise),
+	.front(.counterclockwise), .back(.counterclockwise),
+	.up(.counterclockwise), .down(.counterclockwise),
+	.left(.counterclockwise), .right(.counterclockwise),
+	.front(.double), .back(.double),
+	.up(.double), .down(.double),
+	.left(.double), .right(.double)
 ]
 
 assert(cube.makeMoves(moves).reverseMoves(moves) == cube)
