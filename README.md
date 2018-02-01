@@ -30,7 +30,8 @@ The cube's state should be printed to console as follows.
 ```
 
 Then you may turn front face counter clockwise and print as follows. 
-```
+
+```.swift
 let cube2 = cube1.makeFront(.counterclockwise)
 print(cube2)
 ```
@@ -75,7 +76,7 @@ cube4 == cube // true
 
 ### Types
 
-| Left align  | Center align |
+| Type  | Description |
 |:------------|:------------|
 | Face       	| Specifies a face direction of cube |
 | Surface    	| Specifies a face of cube that contains tiles |
