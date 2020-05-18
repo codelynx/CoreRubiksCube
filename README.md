@@ -2,7 +2,7 @@
 
 
 ![xcode](https://img.shields.io/badge/Xcode-11.4-blue)
-![swift](https://img.shields.io/badge/Swift-5.1-orange.svg)
+![swift](https://img.shields.io/badge/Swift-5.2-orange.svg)
 ![license](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 <img src="http://safecrackermethod.com/images/rubiks-cube-simple-ten-solution-070-200x.jpg" title="Rubik's Cube">
